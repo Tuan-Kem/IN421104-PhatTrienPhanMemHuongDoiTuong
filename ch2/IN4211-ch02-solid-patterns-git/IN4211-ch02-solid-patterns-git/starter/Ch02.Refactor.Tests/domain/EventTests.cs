@@ -73,7 +73,7 @@ public class EventTests
         var ev = NewEvent();
 
         // Act
-        var rate = ev.AttendanceRate();
+        var rate = ev.AttendanceRate;
 
         // Assert
         Assert.Equal(0, rate);

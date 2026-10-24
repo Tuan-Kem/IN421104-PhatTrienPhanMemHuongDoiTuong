@@ -3,6 +3,7 @@ namespace Ch02.Refactor.Notifications;
 public enum NotificationChannel
 {
     Email,
-    SMS,
+    Sms,
+    SMS = Sms,
     Slack
 }

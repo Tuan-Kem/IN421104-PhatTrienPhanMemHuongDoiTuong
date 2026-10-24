@@ -6,8 +6,10 @@ public class InMemoryEventRepository : IEventRepository
 {
     private readonly List<Event> _store = new();
 
-    public IReadOnlyList<Event> GetByClub(Guid clubId) =>
+    public IReadOnlyList<Event> GetByClubId(Guid clubId) =>
         _store.Where(e => e.ClubId == clubId).ToList();
+
+    public IReadOnlyList<Event> GetByClub(Guid clubId) => GetByClubId(clubId);
     public Event? GetById(Guid id) => _store.FirstOrDefault(e => e.Id == id);
     public void Add(Event ev) => _store.Add(ev);
 }

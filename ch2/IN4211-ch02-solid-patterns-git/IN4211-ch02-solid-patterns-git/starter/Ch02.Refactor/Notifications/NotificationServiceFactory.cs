@@ -9,7 +9,7 @@ public class NotificationServiceFactory : INotificationServiceFactory
             NotificationChannel.Email => new EmailNotificationService(),
             NotificationChannel.SMS => new SmsNotificationService(),
             NotificationChannel.Slack => new SlackNotificationService(),
-            _ => throw new ArgumentException($"Unsupported notification channel: {channel}")
+            _ => throw new ArgumentOutOfRangeException(nameof(channel), $"Unsupported notification channel: {channel}")
         };
     }
 }

@@ -2,7 +2,7 @@ using Ch02.Refactor.Domain;
 using Ch02.Refactor.Notifications;
 using Ch02.Refactor.Repositories;
 
-namespace EduHub.Ch02.Patterns.Observers;
+namespace Ch02.Refactor.Patterns.Observers;
 
 public class EmailNotifier : IEventObserver
 {

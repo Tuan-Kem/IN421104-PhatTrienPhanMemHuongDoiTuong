@@ -1,4 +1,4 @@
-using starter.Ch02.Domain;
+using Ch02.Refactor.Domain;
 
 namespace starter.Ch02.Tests.domain;
 
