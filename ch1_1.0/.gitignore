@@ -1,7 +1,0 @@
-bin/
-obj/
-*.user
-.vs/
-*.suo
-.idea/
-*.DS_Store
