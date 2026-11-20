@@ -18,6 +18,7 @@ public class GetClubsQueryHandler
     {
         // TODO 2: gọi _repository.GetAllAsync(ct) và trả kết quả
         return await _repository.GetAllAsync(ct);
-        
+
+
     }
 }
