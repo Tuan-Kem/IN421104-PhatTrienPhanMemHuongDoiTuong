@@ -67,3 +67,26 @@ public class GetClubsQueryTests
         Assert.Empty(result);
     }
 }
+
+public class GetClubByIdQueryTests
+{
+    [Fact]
+    public async Task GetClubById_WhenNotFound_ReturnsNull()
+    {
+        // Arrange
+        var club = Club.Create("Tech Club", "Câu lạc bộ công nghệ");
+        var mockRepo = new Mock<IClubRepository>();
+        mockRepo.Setup(r => r.GetByIdAsync(club.Id, default)).ReturnsAsync(club);
+        var handler = new GetClubByIdQueryHandler(mockRepo.Object);
+        // Khởi tạo Handler cần kiểm thử và truyền repository giả 
+        // (mockRepo.Object) vào thông qua Dependency Injection.
+
+        // Act
+        var result = await handler.HandleAsync(new GetClubByIdQuery(club.Id)); // tạo câu truy vấn
+
+        // Assert
+        Assert.NotNull(result);
+        Assert.Equal(club.Id, result!.Id);
+        Assert.Equal("Tech Club", result.Name);
+    }
+}
